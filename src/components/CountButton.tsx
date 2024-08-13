@@ -9,7 +9,7 @@ const CountButton: FC<Props> = ({ onCount }) => {
       className="bg-blue-500 text-white px-4 py-2 rounded"
       onClick={onCount}
     >
-      Count
+      Öka
     </button>
   );
 };

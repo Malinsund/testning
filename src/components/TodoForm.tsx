@@ -23,7 +23,6 @@ export default function TodoForm(props: Props) {
           onChange={(e) => setText(e.target.value)}
           className="border p-2 rounded-md"
         />
-        {/* <span className="ml-2 text-blue-600 cursor-pointer">ℹ️</span> */}
       </div>
       <button>Save</button>
     </form>

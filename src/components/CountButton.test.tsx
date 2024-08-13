@@ -9,7 +9,7 @@ describe("CountButton", () => {
     render(<CountButton onCount={onCount} />);
 
     // Act
-    fireEvent.click(screen.getByText("Count"));
+    fireEvent.click(screen.getByText("Öka"));
 
     // Assert
     expect(onCount).toHaveBeenCalled();

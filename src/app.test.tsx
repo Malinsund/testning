@@ -19,10 +19,10 @@ describe("App", () => {
     expect(screen.getByText("0")).toBeInTheDocument(); // Initialt count ska vara 0
 
     // Klicka på "Count"-knappen två gånger
-    fireEvent.click(screen.getByText("Count")); // Första klicket
+    fireEvent.click(screen.getByText("Öka")); // Första klicket
     expect(screen.getByText("1")).toBeInTheDocument(); // Räknaren ska vara 1 efter första klicket
 
-    fireEvent.click(screen.getByText("Count")); // Andra klicket
+    fireEvent.click(screen.getByText("Öka")); // Andra klicket
     expect(screen.getByText("2")).toBeInTheDocument(); // Räknaren ska vara 2 efter andra klicket
 
     //  Klicka på "Avsluta räknandet"-knappen
