@@ -7,7 +7,7 @@ function App() {
   const [todos, setTodos] = useState<string[]>([]);
   return (
     <>
-      <h1>Shotta</h1>
+      <h1 className="text-red-500">Shotta</h1>
 
       <h2>Hur många shots...</h2>
 
