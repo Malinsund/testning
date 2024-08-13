@@ -1,25 +1,64 @@
 import { useState } from "react";
 import "./App.css";
 import CountButton from "./components/CountButton";
+import EndButton from "./components/EndButton";
 import TodoForm from "./components/TodoForm";
 
+interface Todo {
+  text: string;
+  count: number;
+}
+
 function App() {
-  const [todos, setTodos] = useState<string[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [currentTodo, setCurrentTodo] = useState<string | null>(null);
+
+  const handleSubmit = (text: string) => {
+    setTodos((prevTodos) => [...prevTodos, { text, count: 0 }]);
+    setCurrentTodo(text);
+  };
+
+  const handleEnd = () => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.text === currentTodo ? { ...todo, count: todo.count + 1 } : todo
+      )
+    );
+    setCurrentTodo(null);
+  };
+
   return (
     <>
-      <h1>Shotta</h1>
+      <h1 className="text-red-500">Shotta</h1>
 
-      <h2>Hur många shots...</h2>
+      <TodoForm onSubmit={handleSubmit} />
 
-      <TodoForm onSubmit={(text) => setTodos([...todos, text])} />
+      <h2>Såhär många shots...</h2>
 
-      <CountButton />
-
-      <ul>
+      <div>
         {todos.map((todo) => (
-          <li key={todo}>{todo}</li>
+          <div key={todo.text} className="mb-2">
+            <span className="font-bold">{todo.text}: </span>
+            <span>{todo.count}</span>
+          </div>
         ))}
-      </ul>
+      </div>
+
+      <CountButton
+        onCount={() => {
+          if (currentTodo) {
+            setTodos((prevTodos) =>
+              prevTodos.map((todo) =>
+                todo.text === currentTodo
+                  ? { ...todo, count: todo.count + 1 }
+                  : todo
+              )
+            );
+          }
+        }}
+      />
+
+      <EndButton onEnd={handleEnd} />
     </>
   );
 }

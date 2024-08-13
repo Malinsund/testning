@@ -1,60 +1,44 @@
-# React + TypeScript + Vite
+# En enkel "räkna shots" applikation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Du skriver enkelt in vad det är du vill räkna på till exempel "för varje gång jag hickar"
+Sedan är det bara att trycka på "öka" knappen för varje gång du hickar, när du är klar trycker du på "avsluta räknandet" och du har antal shottar ni ska dricka ikväll!
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+För att komma igång med projektet, följ dessa steg:
 
-## Expanding the ESLint configuration
+1. Klona repot:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+   ```bash
+   git clone <https://github.com/Malinsund/testning.git>
 
-- Configure the top-level `parserOptions` property like this:
+   ```
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+2. ```bash npm install
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+   ```
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+## Ramverk och hjälpmedel
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+I detta project har jag använte mig av
 
-1. npm init vite@latest
+- React: Ett populärt JavaScript-bibliotek för att bygga användargränssnitt.
+- TypeScript: Ett typat superset av JavaScript som lägger till statiska typer.
+- Vite: Ett modernt byggverktyg som erbjuder snabbare utvecklings- och byggtider.
+- Tailwind CSS: Ett utility-first CSS-ramverk för att snabbt bygga anpassade användargränssnitt.
 
-2. npm i vitest
+### testat med
 
-3. npm install --save-dev @testing-library/react @testing-library/dom
+- Vitest: Ett snabbt och enkelt testverktyg för Vite-projekt.
+- Testing library
 
-4. npm i jsdom
+## Användning
 
-5. npm i @testing-library/jest-dom
+För att starta utvecklingsservern och se applikationen i din webbläsare, kör:
+`npm run dev`
+
+För att bygga projektet för produktion, kör:
+`npm run build`
+
+För att köra tester, använd:
+`npm test`
