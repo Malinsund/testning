@@ -1,13 +1,17 @@
-import { useState } from "react";
-
-export default function CountButton() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
-    </>
-  );
+import { FC } from "react";
+interface Props {
+  onCount: () => void;
 }
+
+const CountButton: FC<Props> = ({ onCount }) => {
+  return (
+    <button
+      className="bg-blue-500 text-white px-4 py-2 rounded"
+      onClick={onCount}
+    >
+      Count
+    </button>
+  );
+};
+
+export default CountButton;
